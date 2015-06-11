@@ -40,3 +40,13 @@ nav span {
 a {
   color: #00B7FF;
 }
+
+table td {
+  padding: 5px;
+  vertical-align: top;
+}
+
+table .label {
+  font-weight: bold;
+  text-align: right;
+}
