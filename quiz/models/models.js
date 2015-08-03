@@ -3,8 +3,6 @@ require('dotenv').load();
 
 // Postgress    DATABASE_URL = postgres://user:password@host:port/database
 // SQLite       DATABASE_URL = dqlite://:@:/
-console.log(process.env.DATABASE_URL);
-//console.log('postgres://user:password@host:port/database'.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/));
 var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
 var db_name     = (url[6] || null);
 var user        = (url[2] || null);
