@@ -50,3 +50,12 @@ table .label {
   font-weight: bold;
   text-align: right;
 }
+
+nav span {
+  margin: 0 10px 0 0;
+}
+
+#ErrorMsgs {
+  color: #ff6611;
+  font-size: smaller;
+}
