@@ -23,7 +23,9 @@ exports.index = function(req, res){
     
     if ( search != undefined )
         search = search.replace(' ','%');
-
+    else
+        search = '';
+        
     models.Quiz.findAll({where: ['pregunta like ?', '%'+search+'%']}).then(function(quizes){
         res.render('quizes/index.ejs', {quizes: quizes, errors: []});
     });
@@ -110,5 +112,5 @@ exports.destroy = function(req, res){
 
 // GET /author
 exports.author = function(req, res){
-    res.render('author', {});
+    res.render('author', {errors: []});
 };
