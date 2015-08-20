@@ -41,6 +41,17 @@ app.use(function(req, res, next){
 });
 
 
+// auto-logout
+app.use(function(req, res, next){
+    if ( req.session.user ){
+        if ( (new Date() - new Date(req.session.user.lastAction)) > 120000 )
+            delete req.session.user;
+    }
+    next();        
+});
+
+
+
 app.use('/', routes);
 
 // catch 404 and forward to error handler
